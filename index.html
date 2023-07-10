@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>trivago.in - Compare hotel prices worldwide</title>
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="main">
+      <header class="main-header">
+        <nav class="navbar">
+          <div class="logo">
+            <a href="index.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="120" height="60">
+                <path
+                  d="M49.673 37.375l-6.62-16.07h5.336l4.052 10.933h.065l3.756-10.933h4.973L54.9 37.375z"
+                  fill="#f48f00"
+                />
+                <path
+                  d="M23.7 25.256h-4.874v5.38c0 .44.054.84.103 1.202a2.29 2.29 0 0 0 .341.938c.17.264.436.467.786.608s.82.214 1.4.214a10.29 10.29 0 0 0 1.158-.082c.47-.056.823-.182 1.086-.378v4.116c-.66.198-1.247.33-1.9.396l-1.927.1c-.92 0-1.768-.087-2.54-.264s-1.452-.455-2.03-.84-1.047-.884-1.373-1.5-.504-1.36-.504-2.24v-7.652H10v-3.952h3.425V16.56h5.4v4.742H23.7zm1.317-3.95h5.006v2.634h.05c.527-1.054 1.153-1.74 1.877-2.234s1.636-.748 2.735-.748l.863.03a4.79 4.79 0 0 1 .799.129v4.513l-1.045-.247a6.8 6.8 0 0 0-1.074-.083c-.945 0-1.694.132-2.242.396a2.98 2.98 0 0 0-1.269 1.103c-.296.472-.48 1.038-.57 1.696s-.124 1.384-.124 2.175v6.706h-5.006v-16.07zm12.513-.001h4.874v16.07H37.53zm-.2-4.228a2.52 2.52 0 0 1 .77-1.855 2.53 2.53 0 0 1 1.855-.77c.725 0 1.344.257 1.856.77a2.53 2.53 0 0 1 .77 1.855 2.52 2.52 0 0 1-.77 1.854 2.52 2.52 0 0 1-1.856.771c-.724 0-1.342-.256-1.855-.77s-.77-1.13-.77-1.854"
+                  fill="#007fad"
+                />
+                <path
+                  d="M69.616 30.394c-.373 0-.84-.01-1.4.022s-1.098.114-1.614.267-.955.378-1.317.684-.543.732-.543 1.282c0 .593.252 1.03.758 1.316s1.03.428 1.58.428a4.94 4.94 0 0 0 1.4-.199c.45-.132.85-.318 1.202-.56a2.74 2.74 0 0 0 .853-.922c.208-.373.324-.812.324-1.318v-1zm1.242 5.006h-.1c-.55.8-1.28 1.444-2.19 1.817s-1.873.547-2.883.547a7.43 7.43 0 0 1-2.157-.32c-.69-.208-1.3-.525-1.828-.942s-.945-.935-1.252-1.55-.46-1.328-.46-2.14c0-.922.17-1.703.51-2.34s.8-1.165 1.383-1.58 1.247-.74 1.993-.97a14.54 14.54 0 0 1 2.323-.511 22.52 22.52 0 0 1 2.404-.198l2.222-.033c0-.877-.312-1.575-.938-2.09s-1.367-.774-2.223-.774c-.812 0-1.553.17-2.223.5s-1.268.808-1.795 1.4l-2.635-2.7c.922-.856 1.998-1.5 3.228-1.926s2.503-.643 3.82-.643c1.45 0 2.64.18 3.573.544s1.68.896 2.24 1.598.928 1.563 1.147 2.585.308 2.202.308 3.54v8.156h-4.48V35.4z"
+                  fill="#f48f00"
+                />
+                <path
+                  d="M98.377 29.35c0 1.207.314 2.185.94 2.93s1.505 1.12 2.638 1.12 2-.373 2.637-1.12.94-1.724.94-2.93-.314-2.185-.94-2.932-1.504-1.12-2.637-1.12-2 .374-2.638 1.12-.94 1.724-.94 2.932m-4.47 0c0-1.273.2-2.426.625-3.46s.988-1.915 1.715-2.65a7.46 7.46 0 0 1 2.562-1.697c.984-.396 2.03-.594 3.144-.594s2.16.198 3.143.594a7.47 7.47 0 0 1 2.563 1.697c.726.737 1.297 1.62 1.713 2.65s.627 2.186.627 3.46-.2 2.426-.627 3.458-.988 1.916-1.713 2.65a7.5 7.5 0 0 1-2.563 1.696c-.983.396-2.03.594-3.143.594a8.35 8.35 0 0 1-3.144-.594 7.43 7.43 0 0 1-2.562-1.696c-.726-.735-1.297-1.62-1.715-2.65s-.625-2.185-.625-3.458m-5.223-8.06v2.153H88.6c-.086-.118-.207-.297-.56-.6a6.17 6.17 0 0 0-1.268-.845 7.02 7.02 0 0 0-1.581-.626 8.42 8.42 0 0 0-2.042-.28c-1.145 0-2.192.313-3.096.785s-1.564.955-2.168 1.756c-.594.8-.942 1.58-1.22 2.613s-.348 2.217-.348 3.274c0 1.2.183 2.36.478 3.398.297 1.044.777 1.986 1.398 2.697.675.774 1.368 1.174 2.338 1.582s2 .555 3.2.542c.753-.008 1.486-.174 2.332-.5a4.73 4.73 0 0 0 2.036-1.542h.057v1.557c0 1.146-.25 2.087-.965 2.825s-1.76 1.134-3.28 1.134c-1.013 0-1.65.02-2.68-.258-.896-.242-2.022-.668-2.858-1.28l-2.403 3.528c1.28.928 2.44 1.5 3.83 1.867 1.377.364 2.786.48 4.218.48 3.128 0 5.343-.787 6.874-2.363s2.155-3.883 2.155-6.924V21.3zm-1.232 11.014c-.628.75-1.5 1.123-2.645 1.123s-2.018-.374-2.647-1.123-.942-1.73-.942-2.94.315-2.192.942-2.94 1.5-1.124 2.647-1.124 2.017.375 2.645 1.124.943 1.73.943 2.94-.314 2.192-.943 2.94z"
+                  fill="#c94a30"
+                />
+              </svg>
+            </a>
+          </div>
+          <div class="nav">
+            <ul class="nav-group">
+              <li class="nav-items">
+                <i class="bx bx-heart icon"></i>Favorites
+              </li>
+              <li class="nav-items">
+                INR<i class="bx bx-chevron-down icon"></i>
+              </li>
+              <li class="nav-items">
+                EN<i class="bx bx-chevron-down icon"></i>
+              </li>
+              <li class="nav-items">Log in<i class="bx bx-user icon"></i></li>
+              <li class="nav-items"><i class="bx bx-menu icon"></i>Menu</li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+    </section>
+    <hr class="hr-line" />
+
+    <section class="section-body">
+      <div class="first-section">
+        <h1><span>We compare</span> hotel prices from multiple sites</h1>
+        <div class="slider">
+          <div class="slide active">All stays</div>
+          <div class="slide">Hotel</div>
+          <div class="slide">House / Apartment</div>
+        </div>
+        <div class="search">
+          <div class="search-section border">
+            <i class="bx bx-search"></i
+            ><input type="text" placeholder="Where to?" />
+          </div>
+          <div class="check-in border ">
+            <p>check in</p>
+            <input type="date" />
+          </div>
+          <div class="check-out border">
+            <p>check out</p>
+            <input type="date" />
+          </div>
+          <div class="rooms">
+            <div class="room-icon">
+              <i class="bx bx-bed"></i>
+            </div>
+            <div class="room-text">
+              <span class="small">Guest and rooms</span>
+              <span class="large">2 Guest, 1 Room</span>
+            </div>
+          </div>
+          <div class="search-btn">
+            <button class="btn">Search</button>
+          </div>
+        </div>
+        <div class="brand-logo">
+          <img class="brand-icon" src="assets/images/1.png" alt="brand-icon" />
+          <img class="brand-icon" src="assets/images/2.png" alt="brand-icon" />
+          <img class="brand-icon" src="assets/images/3.png" alt="brand-icon" />
+          <img class="brand-icon" src="assets/images/4.png" alt="brand-icon" />
+          <img class="brand-icon" src="assets/images/5.png" alt="brand-icon" />
+          <img class="brand-icon" src="assets/images/6.png" alt="brand-icon" />
+          <img class="brand-icon" src="assets/images/7.png" alt="brand-icon" />
+        </div>
+      </div>
+    </section>
+
+    <section class="card-section">
+      <div class="cards">
+        <h2 class="card-headr">Populer Searches</h2>
+        <div class="toggle-container">
+          <div class="toggle-item">Cities</div>
+          <div class="toggle-item">Destinations</div>
+        </div>
+        <div class="card-container">
+          <div class="card">
+            <img src="assets/images/card-one.webp" alt="" />
+            <div class="card-text">
+              <p><span>USA</span></p>
+              <br />
+              <p><span>2,644,836</span> Hotels</p>
+              <p>Avg. <span>$127</span></p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="assets/images/card-two.webp" alt="" />
+            <div class="card-text">
+              <p><span>Florida</span></p>
+              <br />
+              <p><span>556,586</span> Hotels</p>
+              <p>Avg. <span>$161</span></p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="assets/images/card-three.webp" alt="" />
+            <div class="card-text">
+              <p><span>California</span></p>
+              <br />
+              <p><span>284,789</span> Hotels</p>
+              <p>Avg. <span>$170</span></p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="assets/images/card-four.webp" alt="" />
+            <div class="card-text">
+              <p><span>Maul</span></p>
+              <br />
+              <p><span>24,790</span> Hotels</p>
+              <p>Avg. <span>$291</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="about-header">
+        <h2>About <span>trivago</span></h2>
+      </div>
+      <div class="about-cards">
+        <div class="row-one">
+          <div class="one">
+            <h3>trivago's global hotel search</h3>
+            <p>
+              trivago’s hotel search allows users to compare hotel prices in
+              just a few clicks from hundreds of booking sites for more than 5.0
+              million hotels and other types of accommodation in over 190
+              countries. We help millions of travelers each year compare deals
+              for hotels and accommodations. Get information for trips to cities
+              like Las Vegas or Orlando and you can find the right hotel on
+              trivago quickly and easily. New York City and its surrounding area
+              are great for trips that are a week or longer with the numerous
+              hotels available.
+            </p>
+          </div>
+          <div class="two">
+            <h3>Find cheap hotels on trivago</h3>
+            <p>
+              With trivago you can easily find your ideal hotel and compare
+              prices from different websites. Simply enter where you want to go
+              and your desired travel dates, and let our hotel search engine
+              compare accommodation prices for you. To refine your search
+              results, simply filter by price, distance (e.g. from the beach),
+              star category, facilities and more. From budget hostels to luxury
+              suites, trivago makes it easy to book online. You can search from
+              a large variety of rooms and locations across the USA, like San
+              Francisco and Chicago to popular cities and holiday destinations
+              abroad!
+            </p>
+          </div>
+        </div>
+        <div class="row-two">
+          <div class="one">
+            <h3>Hotel reviews help you find your ideal hotel</h3>
+            <p>
+              Over 175 million aggregated hotel ratings and more than 19 million
+              images allow you to find out more about where you're traveling. To
+              get an extended overview of a hotel property, trivago shows the
+              average rating and extensive reviews from other booking sites,
+              e.g. Hotels.com, Expedia, Agoda, leading hotels, etc. trivago
+              makes it easy for you to find information about your trip to Miami
+              Beach, including the ideal hotel for you.
+            </p>
+          </div>
+          <div class="two">
+            <h3>How to book</h3>
+            <p>
+              trivago is a hotel search with an extensive price comparison. The
+              prices shown come from numerous hotels and booking websites. This
+              means that while users decide on trivago which hotel best suits
+              their needs, the booking process itself is completed through the
+              booking sites (which are linked to our website). By clicking on
+              the “view deal” button, you will be forwarded onto a booking site
+              where you can complete the reservation for the hotel deal found on
+              trivago. Let trivago help you to find the right price from
+              hundreds of booking sites!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="iframe-section">
+      <div class="iframe-header">
+        <div class="left-head">
+          <h2>More Populer Searches</h2>
+        </div>
+        <div class="right-head">
+          <h2>trivago international sites</h2>
+        </div>
+      </div>
+      <div class="iframe">
+        <div class="left">
+          <iframe src="popular.html" frameborder="0"></iframe>
+        </div>
+        <div class="right">
+          <iframe src="international.html" frameborder="0"></iframe>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-header">
+          <div class="footer-logo">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="77"
+              height="24.15686274509804"
+              viewBox="0 0 102 32"
+              style="filter: brightness(0) invert(1)"
+            >
+              <path
+                class="Logo_default_svg__logo-svg-path"
+                d="M33.706 6.989h5.441l4.133 11.149h.066l3.83-11.149h5.071L45.8 23.377h-5.34"
+                fill="#FC9E15"
+              ></path>
+              <path
+                class="Logo_default_svg__logo-svg-path"
+                d="M13.971 11.018H9V16.5c0 .93.082 2.119.959 2.655a4.649 4.649 0 002.9.283 2.242 2.242 0 001.107-.386v4.2a10.114 10.114 0 01-1.938.4c-3.556.359-8.54-.253-8.54-4.838v-7.8H0V6.988h3.492V2.153H9v4.836h4.97v4.03zm14.1-4.03h4.97v16.389h-4.97V6.989zm-.2-4.311a2.676 2.676 0 115.351 0 2.677 2.677 0 01-5.353 0"
+                fill="#1391D2"
+              ></path>
+              <path
+                class="Logo_default_svg__logo-svg-path"
+                d="M90.124 15.195c0 2.215 1.289 4.13 3.648 4.13s3.647-1.915 3.647-4.131-1.287-4.133-3.647-4.133-3.647 1.917-3.648 4.134m-4.556 0a8.224 8.224 0 0114.711-5.43 9.491 9.491 0 01.687 9.766 8.214 8.214 0 01-15.4-4.336M80.24 6.973v2.2h-.076a3.041 3.041 0 00-.574-.613c-3.254-2.8-8.812-2.238-10.915 1.679a11.506 11.506 0 00-.924 6.812c.283 2.077 1.05 4.275 2.879 5.478a7.739 7.739 0 006.936.71 4.8 4.8 0 002.075-1.572h.059v1.588a3.9 3.9 0 01-.984 2.881c-1.449 1.493-4.218 1.4-6.079.894a9.223 9.223 0 01-2.914-1.307l-2.451 3.6a11.307 11.307 0 003.906 1.9c3.583.949 8.543.928 11.312-1.921 1.561-1.606 2.2-3.96 2.2-7.06V6.971h-4.448zM78.984 18.2a3.707 3.707 0 01-5.4 0 5.013 5.013 0 010-6 3.707 3.707 0 015.4 0 5.011 5.011 0 010 6c-.639.763.641-.763 0 0z"
+                fill="#E3403D"
+              ></path>
+              <path
+                class="Logo_default_svg__logo-svg-path"
+                d="M15.314 6.989h5.105v2.686h.051A5.715 5.715 0 0122.384 7.4a6.338 6.338 0 014.482-.6v4.6c-1.029-.278-3.2-.715-4.717.211-.96.586-1.731 1.288-1.731 4.929v6.839h-5.105V6.989z"
+                fill="#1391D2"
+              ></path>
+              <path
+                class="Logo_default_svg__logo-svg-path"
+                d="M56.992 16.844c-1 .62-1.683 1.829-.763 2.775.9.922 2.522.829 3.632.441a2.98 2.98 0 002.2-2.784v-1.018c.017 0-3.794-.208-5.069.585zm5.07 4.518h-.093a5.079 5.079 0 01-2.232 1.852c-3.563 1.464-8.748-.019-8.75-4.492 0-4.655 5.07-5.606 8.784-5.712a89.25 89.25 0 012.267-.034 2.62 2.62 0 00-.957-2.132 4.243 4.243 0 00-4.535-.268A6.2 6.2 0 0054.716 12l-2.688-2.752a9.255 9.255 0 013.292-1.966 11.844 11.844 0 017.044-.27 5.625 5.625 0 013.952 4.437 17.479 17.479 0 01.314 3.61v8.317h-4.567v-2.014z"
+                fill="#fff"
+              ></path>
+            </svg>
+          </div>
+          <div class="online-icons">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              class="pointer-events-none max-h-full max-w-full h-full w-full"
+            >
+              <path
+                d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm3 5.62h-1.52a.65.65 0 00-.61.54v1.56H15c-.09 1.19-.26 2.28-.26 2.28h-1.88v6.75h-2.8V12H8.7V9.72h1.36V7.86c0-.33-.07-2.61 2.87-2.61H15z"
+                fill="#fff"
+              ></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              class="pointer-events-none max-h-full max-w-full h-full w-full"
+            >
+              <path
+                d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm5.62 7.86v.44a7.91 7.91 0 01-8 7.87A8 8 0 015.41 17h.44a6.3 6.3 0 003.78-1.3h-.2a2.68 2.68 0 01-2.56-1.92 2.32 2.32 0 00.53.05 2.9 2.9 0 00.79-.11 2.58 2.58 0 01-1.43-.67 2.66 2.66 0 01-.88-2 .57.57 0 010-.13 2.58 2.58 0 001.27.32 2.68 2.68 0 01-1.06-1.15h-.07a2.63 2.63 0 01-.22-1 2.53 2.53 0 01.41-1.41 6.72 6.72 0 00.9 1 1 1 0 00.19.17 7.7 7.7 0 002.18 1.07l.33.12a9 9 0 001 .28h.27a7.6 7.6 0 001 .09 2.59 2.59 0 01-.08-.58 2.66 2.66 0 01.24-1.13 2.47 2.47 0 01.52-.79 1.54 1.54 0 01.24-.26A2.76 2.76 0 0114.82 7a2.74 2.74 0 012.05.92l.35-.09a7.06 7.06 0 001.42-.58.88.88 0 01-.07.23 2.29 2.29 0 01-1.11 1.26v.09A6 6 0 0019 8.37a8.87 8.87 0 01-1.38 1.49z"
+                fill="#fff"
+              ></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              class="pointer-events-none max-h-full max-w-full h-full w-full"
+            >
+              <g fill="#fff">
+                <circle cx="12" cy="12" r="2.25"></circle>
+                <path
+                  d="M17.49 9.27A3.85 3.85 0 0017.26 8a2 2 0 00-.51-.77 2 2 0 00-.75-.49 3.85 3.85 0 00-1.25-.23H9.29A3.85 3.85 0 008 6.74a2 2 0 00-.77.51 2 2 0 00-.49.75 3.85 3.85 0 00-.23 1.25v5.46A3.85 3.85 0 006.74 16a2 2 0 00.51.77 2 2 0 00.77.51 3.85 3.85 0 001.25.23h5.46a3.85 3.85 0 001.27-.25A2.32 2.32 0 0017.26 16a3.85 3.85 0 00.23-1.25v-2.73c0-1.8.03-2.02 0-2.75zM12 15.46A3.46 3.46 0 1115.46 12 3.46 3.46 0 0112 15.46zm3.6-6.25a.81.81 0 11.81-.81.81.81 0 01-.81.81z"
+                ></path>
+                <path
+                  d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm6.7 12.78a4.82 4.82 0 01-.31 1.64 3.49 3.49 0 01-2 2 4.82 4.82 0 01-1.64.31c-.72 0-.95.05-2.78.05s-2.06 0-2.78-.05a4.82 4.82 0 01-1.64-.31 3.19 3.19 0 01-1.19-.78 3.19 3.19 0 01-.78-1.19 4.82 4.82 0 01-.31-1.64v-2.78-2.78a4.82 4.82 0 01.31-1.64 3.19 3.19 0 01.78-1.19 3.19 3.19 0 011.19-.78 5 5 0 011.64-.32h5.56a5 5 0 011.64.32 3.19 3.19 0 011.19.78 3.19 3.19 0 01.78 1.19 4.82 4.82 0 01.31 1.64c0 .72.05.95.05 2.78s.02 2.03-.02 2.75z"
+                ></path>
+              </g>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              class="pointer-events-none max-h-full max-w-full h-full w-full"
+            >
+              <g fill="#fff">
+                <path d="M10 9l5 3-5 3V9z"></path>
+                <path
+                  d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm7 12.59A2.36 2.36 0 0116.59 17H7.41A2.36 2.36 0 015 14.59V9.41A2.36 2.36 0 017.41 7h9.18A2.36 2.36 0 0119 9.41z"
+                ></path>
+              </g>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              class="pointer-events-none max-h-full max-w-full h-full w-full"
+            >
+              <path
+                d="M12 2a10 10 0 1010 10A10 10 0 0012 2zM8.73 17.4H6.15V9.71h2.58zM7.44 8.66A1.33 1.33 0 117.46 6a1.33 1.33 0 110 2.66zM18 17.4h-2.57v-4.12c0-1-.37-1.74-1.31-1.74a1.39 1.39 0 00-1.31.94 1.66 1.66 0 00-.09.62v4.3h-2.57V9.71h2.57v1.09A2.54 2.54 0 0115 9.53c1.69 0 3 1.09 3 3.46z"
+                fill="#fff"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <div class="footer-body">
+          <div class="dropdown">
+            <select>
+              <option>Arab World (العالم العربي)</option>
+              <option>Argentina</option>
+              <option>Australia</option>
+              <option>Austria (Österreich)</option>
+              <option>Belgium (België)</option>
+              <option>Brazil (Brasil)</option>
+              <option>Bulgaria (България)</option>
+              <option>Canada</option>
+              <option>Chile</option>
+              <option>Colombia</option>
+              <option>Croatia (Hrvatska)</option>
+              <option>Czechia (Česko)</option>
+              <option>Denmark (Danmark)</option>
+              <option>Ecuador</option>
+              <option>Finland (Suomi)</option>
+              <option>France</option>
+              <option>Germany (Deutschland)</option>
+              <option>Greece (Ελλάδα)</option>
+              <option>Hong Kong (香港)</option>
+              <option>Hungary (Magyarország)</option>
+              <option selected >India</option>
+              <option>Indonesia</option>
+              <option>Ireland</option>
+              <option>Israel (ישראל)</option>
+              <option>Italy (Italia)</option>
+              <option>Japan (日本)</option>
+              <option>Korea (한국)</option>
+              <option>Malaysia</option>
+              <option>Mexico (México)</option>
+              <option>Netherlands (Nederland)</option>
+              <option>New Zealand</option>
+              <option>Norway (Norge)</option>
+              <option>Peru (Perú)</option>
+              <option>Philippines (Pilipinas)</option>
+              <option>Poland (Polska)</option>
+              <option>Portugal</option>
+              <option>Romania (România)</option>
+              <option>Serbia (Srbija)</option>
+              <option>Singapore</option>
+              <option>Slovakia (Slovensko)</option>
+              <option>Slovenia (Slovenija)</option>
+              <option>South Africa</option>
+              <option>Spain (España)</option>
+              <option>Sweden (Sverige)</option>
+              <option>Switzerland (Schweiz)</option>
+              <option>Taiwan (台灣)</option>
+              <option>Thailand (ประเทศไทย)</option>
+              <option>Turkey (Türkiye)</option>
+              <option>UAE</option>
+              <option>United Kingdom</option>
+              <option>Uruguay</option>
+              <option>USA</option>
+              <option>Vietnam (Việt Nam)</option>
+            </select>
+          </div>
+          <div class="footer-text">
+            <div class="footer-one">
+              <ul>
+                <li>Company</li>
+                <li>Jobs</li>
+                <li>Press</li>
+                <li>Investor relations</li>
+                <li>Mobile apps - searching on the go</li>
+                <li>trivago Business Studio</li>
+              </ul>
+            </div>
+            <div class="footer-two">
+              <ul>
+                <li>Help</li>
+                <li>Learn how trivago works</li>
+                <li>Terms and conditions</li>
+                <li>Legal information</li>
+                <li>Do Not Sell My Personal Informations</li>
+                <li>Privacy notice</li>
+                <li>Cyber Security</li>
+                <li>Coronavirus (COVID-19) travel advice</li>
+              </ul>
+            </div>
+            <div class="footer-three">
+              <div class="footer-three-contents">
+                <div class="newsletter">
+                  <h2>
+                    Want to <span>receive</span> exclusive accommodation offers?
+                    Subscribe to our <span>newsletter</span>.
+                  </h2>
+                </div>
+                <div class="input-text-btn">
+                  <input
+                    type="text"
+                    placeholder="Email Address"
+                    name=""
+                    id=""
+                  />
+                  <button>Subscribe</button>
+                </div>
+                <div class="copyright">
+                  <p>
+                    trivago N.V., Kesselstraße 5 – 7, 40221 Düsseldorf, Germany, <br>
+                    Copyright 2023 trivago | All rights reserved.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
