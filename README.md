@@ -1,3 +1,3 @@
 # trivago-clone
 
-#Hosted URL - https://resonant-bonbon-e0acd5.netlify.app/
+# Hosted URL - https://resonant-bonbon-e0acd5.netlify.app/
